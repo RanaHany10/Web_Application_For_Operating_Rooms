@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OPERATO</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+   <script>
+
+      // Get the modal
+      var modal = document.getElementById('id01');
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('static/images/0.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: row-reverse
+      }
+    
+    .container {
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4c76af;
+      color: white;
+      padding: 12px 10px;
+      border:lemonchiffon;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #4c76af;
+    }
+    img {
+  width: 100%;
+    }
+  label.logo{
+    font-family: 'Brush Script MT', cursive;
+    font-style: italic;
+    font-size: 90px;
+    color: #4c76af;
+    padding-bottom: 10px;
+    padding-top: 7px;
+    padding-left: 100px;
+    text-shadow: 2px 2px 2px #6675dcfa;
+    }
+   
+* {box-sizing: border-box}
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:  #04aa7c;
+    color: white;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  
+  width: 50%;
+}
+.cancelbtn{
+  float:right;
+  size-adjust: 50px;
+}
+/* Add padding to container elements */
+.container2 {
+  padding: 16px;
+  width: auto;
+  
+
+}
+.id01 {
+  margin-right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-image: url('static/images/b.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+  
+           
+
+  <div class="container">
+    <h2>Login</h2>
+    <form  action="http://localhost:5000/validation" method="POST" >
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login" onclick="location.href = '/home';">
+      
+    </form>
+    <form action="http://localhost:5000/signup" >
+      <button onclick="location.href = '/signup';">Sign Up</button>
+    </form>
+  </div>
+  <label class="logo">Operato</label>
+ 
+
+
+
+
+  
+</body>
+</html>

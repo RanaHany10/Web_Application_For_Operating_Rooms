@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<title>OPERATO</title>  
+<link rel="stylesheet" type="static/text/css" href="static/css/bootstrap.min.css">
+<link rel="stylesheet" href="static/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/animate.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+
+ <style>
+
+        
+        footer{
+            position: relative;
+            /*top: 30px;*/
+            top: 153px;
+
+        }
+        footer .row span{
+            color: white;
+        }
+        footer h4{
+            color: #fff;
+        font-size: 15px;
+        }
+        footer .row{
+            height: 36px;
+            width: 100%;
+            background-color: #4c76af;
+            margin-left: 0px;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #4c76af;
+            width: 100%;
+            height: 70px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        .navbar .Logo {
+        float: left;
+        
+        
+        }
+        
+        .navbar .Logo a {
+            font-family: 'Brush Script MT', cursive;
+            font-style: italic;
+            font-size: 45px;
+            color: white;
+            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-left: 100px;
+            
+            
+            
+        }
+        .navbar a {
+            float: right;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            text-decoration: none;
+        }
+        *{
+            padding: 0px;
+
+            margin: 0px;
+        }
+        body{
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:rgba(33, 52, 97, 0.912) ;
+            background-image: url('static/images/b.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        .container{
+            background-color: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    
+        <div class="navbar">
+            <div class="Logo">
+              <a href="http://127.0.0.1:5000/home">Operato</a>
+            </div>
+            <a href="http://127.0.0.1:5000/logout">Log Out</a>
+            <a href="http://127.0.0.1:5000/supplies">Supplies</a>
+            <a href="http://127.0.0.1:5000/equipment">Equipments</a>
+            <a href="http://127.0.0.1:5000/patient">Patient</a>
+            <a href="http://127.0.0.1:5000/nurses">Nurses</a>
+            <a href="http://127.0.0.1:5000/doctors">Doctors</a>
+            <a href="http://127.0.0.1:5000/oproom">Operating Room</a>
+            <a href="http://127.0.0.1:5000/home">Home</a>  
+          </div>
+        
+    </header> 
+    <div  class="container">
+        <htmlform >
+
+        
+            <style>
+                .section {
+                    border: 1px solid #009d8e;
+                    padding: 2px;
+                    text-align: left;
+                    margin-bottom: 1em;
+                }
+                .sectionHeader {
+                    background-color: #009d8e;
+                    color: white;
+                    display: block;
+                    padding: 2px;
+                    font-weight: bold;
+                }
+                table.baseline-aligned td {
+                    vertical-align: baseline;
+                }
+                .d_date {
+                    color: blue;
+                }
+                .required {
+                
+                    color:red;
+                }
+                .lookup {
+                    padding-left: 2cm;
+                }
+            </style>
+        
+            <h2>PATIENT MEDICAL HISTORY</h2>
+        
+            <section headerLabel="1. Encounter Details">
+                <table class="baseline-aligned">
+                    
+                    <tr>
+                        <td>Date:</td>
+                        <td><pre>			</pre></td>
+                        <td>Location:</td>
+                        <td><pre>			</pre></td>
+                        
+                    </tr>
+                    {% for r in data %}
+                    <tr>
+                        <td>{{r.0}}</td>
+                        <td><pre>			</pre></td>
+                        <td>{{r.1}}</td>
+                        <td><pre>			</pre></td>
+                        
+                    </tr>
+                    {% endfor %}
+                </table>
+            </section>
+        
+            <section headerLabel="2. Patient Information">
+                <table class="baseline-aligned">
+                    <tr>
+                        <td>SSN:</td>
+                        <td><pre>		</pre></td>
+                        <td>Gender:</td>
+                        <td><pre>		</pre></td>
+                       
+                    </tr>
+                
+
+                    {% for r in data %}
+                    <tr>
+                        <td>{{r.2}}</td>
+                        <td><pre>		</pre></td>
+                        <td>{{r.3}}</td>
+                        <td><pre>		</pre></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </section>
+        
+                <section headerLabel="3. Medical Information">
+        
+                <br />
+                <fieldset><legend>Family History</legend>
+                <table class="baseline-aligned">
+                    <tr>
+                        <td>Family History of Diabetes Mellitus</td>
+                        
+                    </tr>
+                    {% for r in data %}
+                    <tr>
+                        <td></td>
+                        
+                    </tr>
+                    {% endfor %}
+                </table>
+                </fieldset>
+        
+                <br />
+                <br />
+                
+                <fieldset><legend>Past Medical History</legend>
+                <table class="baseline-aligned">
+                <tr>
+                <td>
+                    <table>
+                    <tr>
+                        <obsgroup groupingConceptId="161609">
+                            <td>
+                                Diabetes Mellitus
+                            </td>
+                            
+                            <td id="dm_date">
+                                <obs conceptId="159948" id="dm" />
+                            </td>
+                            
+                        </obsgroup>
+                    </tr>
+                    <tr>
+                        <obsgroup groupingConceptId="161611">
+                            <td>
+                                Hypertension
+                            </td>
+                           
+                            <td id="htn_date">
+                                <obs conceptId="159948" id="htn" />
+                            </td>
+                            
+                        </obsgroup>
+                    </tr>
+                    <tr>
+                        <obsgroup groupingConceptId="161610">
+                            <td>
+                                Myocardial Infarction
+                            </td>
+                           
+                            <td id="mi_date">
+                                <obs conceptId="159948" id="mi" />
+                            </td>
+                            
+                        </obsgroup>
+                    </tr>
+                    <tr>
+                        <obsgroup groupingConceptId="161612">
+                            <td>
+                                CerebroVascular Accident
+                            </td>
+                            
+                            <td id="cva_date">
+                                <obs conceptId="159948" id="cva" />
+                            </td>
+                            
+                        </obsgroup>
+                    </tr>
+                    
+                    </table>
+                </td>
+                </tr>
+                </table>
+                </fieldset>
+                
+                <br />
+                <br />
+                <fieldset><legend>Past Surgical History</legend>
+                <table class="baseline-aligned">
+                    <tr>
+                        <td>Amputation</td>
+                        
+                    </tr>
+                </table>
+                </fieldset>
+                    <tr>
+                        <td colspan="2"><br /></td>
+                    </tr>
+                
+                <br />
+                <fieldset><legend>Social History</legend>
+                <table class="baseline-aligned">
+                    <tr>
+                        <td>Smoker</td>
+                        
+                    </tr>
+                </table>
+                </fieldset>
+        
+            </section>
+        
+        
+            <submit/>
+        
+        
+        </htmlform>
+    </div>
+
+
+        
+    <footer>
+            <div class="row">
+            <center><h4> <span>@ </span> Copyright <span> | OPERATO | </span>  All Rights Reserved  2023  </h4></center>   
+            </div>
+    </footer>
+
+
+
+</body>
+</html>

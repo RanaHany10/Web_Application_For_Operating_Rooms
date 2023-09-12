@@ -1,0 +1,227 @@
+<adddoc class="html"></adddoc>‏
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>OPERATO</title>  
+ 
+
+        <style>
+
+                    /* Style inputs with type="text", select elements and textareas */
+        input[type=text], select, textarea {
+          width: 100%; /* Full width */
+          padding: 12px; /* Some padding */ 
+          border: 1px solid #ccc; /* Gray border */
+          border-radius: 4px; /* Rounded borders */
+          box-sizing: border-box; /* Make sure that padding and width stays in place */
+          margin-top: 6px; /* Add a top margin */
+          margin-bottom: 16px; /* Bottom margin */
+          resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+          background-color: #045faa;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+        /* Add a background color and some padding around the form */
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          margin-top:10% ;
+          margin-bottom:10% ;
+          margin-left:15% ;
+          margin-right:15% ;
+        }
+        footer {
+            position: relative;
+            top: 30px;
+        }
+        footer .row span{
+            color: white;
+        }
+        footer h4{
+            color: #fff;
+          font-size: 15px;
+        }
+        footer .row{
+            height: 36px;
+            width: 100%;
+            background-color: #4c76af;
+            margin-left: 0px;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #4c76af;
+            width: 100%;
+            height: 70px;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+          
+          .navbar .Logo {
+          float: left;
+          
+          
+          }
+          
+          .navbar .Logo a {
+            font-family: 'Brush Script MT', cursive;
+            font-style: italic;
+            font-size: 45px;
+            color: white;
+            padding-bottom: 10px;
+            padding-top: 7px;
+            padding-left: 100px;
+            
+            
+            
+          }
+          .navbar a {
+            float: right;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            text-decoration: none;
+          }
+          *{
+            padding: 0px;
+
+            margin: 0px;
+          }
+          body{
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            top: -20px;
+            background-color:rgba(33, 52, 97, 0.912) ;
+            background-image: url('static/images/b.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+          }
+          p{
+            font-size: 20px;
+          }
+          .div3{
+                margin-top: -9px;
+                margin-bottom: 11px;
+                border: 2px solid #0000002e;
+                border-radius: 5px;
+                padding: 5px;
+
+           }
+          .div1{
+            padding: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #0000002e;
+            border-radius: 5px;
+          }
+          .div2{
+            border: 2px solid #0000002e;
+            border-radius: 5px;   
+            margin-bottom: 20px;   
+            padding: 5px;
+      
+
+          }
+         .div4{
+            margin-bottom: 11px;
+            padding: 5px;
+
+            border: 2px solid #0000002e;
+            border-radius: 5px;
+         }
+  
+        </style>
+    </head>
+    <body>
+        <header>
+    
+            <div class="navbar">
+                <div class="Logo">
+                  <a href="http://127.0.0.1:5000/home">Operato</a>
+                </div>
+                <a href="http://127.0.0.1:5000/logout">Log Out</a>
+                <a href="http://127.0.0.1:5000/supplies">Supplies</a>
+                <a href="http://127.0.0.1:5000/equipment">Equipments</a>
+                <a href="http://127.0.0.1:5000/patient">Patient</a>
+                <a href="http://127.0.0.1:5000/nurses">Nurses</a>
+                <a href="http://127.0.0.1:5000/doctors">Doctors</a>
+                <a href="http://127.0.0.1:5000/oproom">Operating Room</a>
+                <a href="http://127.0.0.1:5000/home">Home</a>  
+              </div>
+            
+    </header>  
+        <div class="container">
+            <form action="http://localhost:5000/addmed" method="POST">
+
+                <label for="Pssn">SSN</label>
+                <input type="text" id="Pssn" name="Pssn" placeholder="Patient ssn..">
+                </select>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                <option value="male">male</option>
+                <option value="female">female</option>
+                </select>
+                
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" placeholder="Location..">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
+                <p> </p>
+                
+                <div class="div1">
+                    <p>Family History</p>
+                    <input type="checkbox" id="c1" name="c1" >
+                    <label for="c1">Family History of Diabetes Mellitus</label><br>
+                </div> 
+                <div class="div2"> 
+                    <p>Past Medical History</p>
+                    <input type="checkbox" id="c3" name="c3" >
+                    <label for="c3">Diabetes Mellitus</label><br>
+                    <input type="checkbox" id="c4" name="c4" >
+                    <label for="c4">Hypertension</label><br>
+                    <input type="checkbox" id="c5" name="c5" >
+                    <label for="c5">Myocardial Infarction</label><br>
+                    <input type="checkbox" id="c6" name="c6" >
+                    <label for="c6">CerebroVascular Accident</label><br><br> 
+                </div>
+                <div class="div3"> 
+                    <p>Past Surgical History</p>
+                    <input type="checkbox" id="c7" name="c7" >
+                    <label for="c7">Amputation</label><br>    
+                </div>
+                <div class="div4"> 
+                    <p>Social History</p>
+                    <input type="checkbox" id="c8" name="c8">
+                    <label for="c8">Smoker</label><br>
+                </div>
+                <input type="submit" value="Submit" onclick="location.href = '\patient';">
+
+            </form>
+        </div>
+
+        <footer>
+            <div class="row">
+            <center><h4> <span>@ </span> Copyright <span> | OPERATO | </span>  All Rights Reserved  2023  </h4></center>   
+            </div>
+        </footer>
+
+    </body>
+    
+</html>
